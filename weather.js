@@ -1,5 +1,5 @@
 
-const apiKey = import.meta.env.VITE_API_KEY_1;
+const apiKey = '03b286fc1ad5704c3415745d5179bd86';
 const searchBtn = document.getElementById('search-btn');
 const cityInput = document.getElementById('Cityinput');
 const cityName = document.getElementById('city-name');
