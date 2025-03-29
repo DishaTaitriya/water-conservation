@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Conservation Platform</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" 
+  integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chatbot.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <script>
+      window.onload = () => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        // console.log("Is logged in:", isLoggedIn); // For debugging
+        if (!isLoggedIn) {
+          window.location.href = 'login.html';
+        }
+      };
+    </script>
+  <script src="chatbot.js" defer></script>    
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+    <div class="container">
+      <img class="logo" src="img/logo.jpg" alt="logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i id="bar" class="bi bi-list"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto"> 
+          
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weather.html">WeatherApp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Forum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="GIS.html">GISmap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <i class="bi bi-search"></i>
+          </li>
+
+
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Saving Water for a Better Future</h1>
+      <p>Discover the best water-saving techniques for your home and farm.</p>
+      <button class="hero-btn" onclick="showContent()">Explore Now</button>
+    </div>
+  </div>
+  <section id="techniques" class="techniques-section hidden">
+    <h2>Water-Efficient Techniques</h2>
+    <div class="techniques-list">
+      <div class="technique blue">
+        <h3>Agricultural Water Saving</h3>
+        <p>Learn how techniques like drip irrigation and crop diversification are reducing water waste.</p>
+        <a href="agri.html">Read More</a>
+      </div>
+      <div class="technique green">
+        <h3>Urban Water Management</h3>
+        <p>Discover urban water-saving solutions like rainwater harvesting and smart irrigation systems.</p>
+        <a href="index2.html">Read More</a>
+      </div>
+      <div class="technique orange">
+        <h3>Industrial Water Recycling</h3>
+        <p>See how industries are adopting water recycling and reuse to lower water consumption.</p>
+        <a href="industrialpage.html">Read More</a>
+      </div>
+    </div>
+  </section>
+
+<section id="banners" class="banners-section hidden">
+  <div class="banner">
+    <img src="img/banner1.jpg" alt="Water Conservation">
+    <div class="banner-content">
+      <h3>Water Conservation Tips</h3>
+      <p>Discover the best ways to save water at home and in your community.</p>
+      <a href="https://learn.eartheasy.com/guides/45-ways-to-conserve-water-in-the-home-and-yard/" target="_blank">Learn More</a>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="img/banner2.jpg" alt="Sustainable Agriculture">
+    <div class="banner-content">
+      <h3>Sustainable Agriculture</h3>
+      <p>Explore how farmers are using innovative methods to conserve water.</p>
+      <a href="https://www.agrifarming.in/sustainable-agriculture-in-india-policies-examples-and-practices" target="_blank">Learn More</a>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="img/banner3.jpg" alt="Water Recycling">
+    <div class="banner-content">
+      <h3>Water Recycling Techniques</h3>
+      <p>See how industries and communities are adopting water recycling.</p>
+      <a href="https://nuwater.com/efficient-water-recycling-techniques/" target="_blank">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section id="resources" class="container py-5">
+  <h2 id="TABLE" class="text-center mb-4">Tools & Resources</h2>
+  <p class="text-center mb-4">
+    Access downloadable guides, toolkits, and more to help you implement water-saving techniques.
+  </p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>Tool/Resource Image</th>
+          <th>Tool/Resource Name</th>
+          <th>YouTube Link</th>
+          <th>Description</th>
+          <th>State Implemented</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="table/drop_irr.jpg" alt="Drip Irrigation System" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Drip Irrigation System</td>
+          <td><a href="https://youtu.be/Xej22GsLLQA?si=vIldmfAEdz6_l4ZC" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>A water-efficient system that delivers water directly to plant roots, reducing evaporation and wastage.</td>
+          <td>Gujarat, Maharashtra, Tamil Nadu</td>
+        </tr>
+        <tr>
+          <td><img src="table/rainwater.jpg" alt="Rainwater Harvesting System" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Rainwater Harvesting System</td>
+          <td><a href="https://youtu.be/21mXqWixcNA?si=tfg28SDBtHvPMG8V" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>A system for collecting and storing rainwater for irrigation and non-potable uses.</td>
+          <td>Rajasthan, Tamil Nadu, Karnataka</td>
+        </tr>
+        <tr>
+          <td><img src="table/micro_irr.jpeg" alt="Micro-Irrigation Systems" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Micro-Irrigation Systems</td>
+          <td><a href="https://youtu.be/lbaJRLGW-Xo?si=7czmuGktn9PSI9nu" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>Systems like sprinklers and drippers that use low pressure to deliver water efficiently to crops.</td>
+          <td>Maharashtra, Karnataka, Andhra Pradesh</td>
+        </tr>
+        <tr>
+          <td><img src="table/graywater.png" alt="Greywater Recycling System" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Greywater Recycling System</td>
+          <td><a href="https://youtu.be/y8kipgTJDUw?si=-hFQnuQdWh8CDPxO" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>Recycles wastewater from households and uses it for irrigation and flushing.</td>
+          <td>Tamil Nadu, Kerala, Delhi</td>
+        </tr>
+        <tr>
+          <td><img src="table/solar.jpeg" alt="Solar-Powered Water Pumps" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Solar-Powered Water Pumps</td>
+          <td><a href="https://youtu.be/ijW1MRMygGQ?si=40HHSQ9qdUK7wAEc" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>Pumps that use solar energy to extract groundwater for irrigation, reducing electricity or diesel usage.</td>
+          <td>Karnataka, Rajasthan, Madhya Pradesh</td>
+        </tr>
+        <tr>
+          <td><img src="table/aritificalrecharging.jpeg" alt="Artificial Groundwater Recharge" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Artificial Groundwater Recharge</td>
+          <td><a href="https://youtu.be/ViNSf_wiM2E?si=BKpEQmZAksMfudi0" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>Techniques to artificially recharge groundwater using trenches and ponds.</td>
+          <td>Rajasthan, Gujarat, Andhra Pradesh</td>
+        </tr>
+        <tr>
+          <td><img src="table/lowwater.jpeg" alt="Low Flow Irrigation" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Low Flow Irrigation</td>
+          <td><a href="https://youtu.be/micjpkuIWP8?si=5y1PDUmbN43x-y3J" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>Advanced irrigation systems that control water flow to minimize wastage during crop watering.</td>
+          <td>Punjab, Haryana, Maharashtra</td>
+        </tr>
+        <tr>
+          <td><img src="table/Check_Dam.jpg" alt="Check Dams" class="img-fluid" style="max-width: 200px;"></td>
+          <td>Check Dams</td>
+          <td><a href="https://youtu.be/SyLFhUnZnLo?si=S4lIPqcU8BCiTwMx" target="_blank" class="btn btn-outline-primary btn-sm">Implementation Video</a></td>
+          <td>Small dams constructed across streams to slow down water flow and allow groundwater recharge.</td>
+          <td>Gujarat, Maharashtra, Rajasthan</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section> 
+
+
+<div class="contact-container" id="contact">
+  <div class="contact-content">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Whether you have questions, feedback, or partnership inquiries, feel free to reach out to us.</p>
+      
+      <div class="info-item">
+        <i class="bi bi-geo-alt"></i>
+        <span>123 Water Street, India</span>
+      </div>
+      <div class="info-item">
+        <i class="bi bi-envelope"></i>
+        <span>support@dtwater.com</span>
+      </div>
+      <div class="info-item">
+        <i class="bi bi-telephone"></i>
+        <span>+91 123-456-7890</span>
+      </div>
+
+      <div class="social-links">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+
+
+    <div class="contact-form">
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="footer-col">
+        <h4>About Us</h4>
+        <p>We are committed to promoting water conservation through innovative solutions and educational resources.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="weather.html">WeatherApp</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="GIS.html">GISmap</a></li>
+          <li><a href="index.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="bi bi-geo-alt"></i> 123 Water Street, India</li>
+          <li><i class="bi bi-envelope"></i> support@dtwater.com</li>
+          <li><i class="bi bi-telephone"></i> +91 123-456-7890</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 dt. All rights reserved. | Designed with ❤️ by dt </p>
+    </div>
+  </div>
+</footer>
+
+<button class="chatbot-toggler">
+  <span class="material-symbols-outlined">mode_comment</span>
+  <span class="material-symbols-outlined">close</span>
+</button>
+<div class="chatbot">
+  <header>
+    <h2>Chatbot</h2>
+    <span class="close-btn material-symbols-outlined">close</span>
+  </header>
+  <ul class="chatbox">
+    <li class="chat incoming">
+      <span class="material-symbols-outlined">smart_toy</span>
+      <p>Hi there 👋 <br> How can I help you today?</p>
+    </li>
+  </ul>
+  <div class="chat-input">
+    <textarea placeholder="Enter a message..." required></textarea>
+    <span id="send-btn" class="material-symbols-outlined">send</span>
+  </div>
+</div>
+  
+<script>
+  function showContent() {
+    const techniquesSection = document.querySelector('.techniques-section');
+    const bannersSection = document.querySelector('.banners-section');
+
+    techniquesSection.classList.add('active');
+    techniquesSection.classList.remove('hidden');
+
+    bannersSection.classList.add('active');
+    bannersSection.classList.remove('hidden');
+
+    techniquesSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !subject || !message) {
+    alert('Please fill out all fields.');
+    return;
+  }
+
+  console.log({ name, email, subject, message });
+  alert('Message sent successfully!');
+  this.reset();
+});
+
+
+//document.addEventListener('DOMContentLoaded', () => {
+   // const isLoggedIn = localStorage.getItem('isLoggedIn');
+    //if (!isLoggedIn) {
+       // window.location.href = 'login.html'; 
+   // }
+//});
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+ integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
+
