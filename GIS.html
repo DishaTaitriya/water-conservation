@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIS Map with OpenStreetMap and OpenWeatherMap</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#map {
+  width:100%;
+  height:700px;
+}
+
+#info-card {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 250px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+#back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+  transition: background-color 0.2s ease;
+}
+
+#back-button:hover {
+  background-color: #45a049;
+}
+#back-button a{
+  text-decoration: none;
+  color: white;
+}
+.hidden {
+  display: none;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+p {
+  margin: 5px 0;
+}
+@media (max-width: 600px) {
+  #info-card {
+    width: 90%; 
+    left: 5%;
+    top: 10px; 
+    padding: 10px;
+    font-size: 14px;
+  }
+#map{
+    width:100%;
+  height:800px;
+}
+  h2 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 12px;
+    margin: 4px 0;
+  }
+  #back-button {
+    padding: 6px 12px;
+    font-size: 12px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #info-card {
+    width: 80%; 
+    left: 10%;
+    top: 15px;
+    padding: 12px;
+  }
+  #map{
+    width:100%;
+    height: 100%;
+}
+  h2 {
+    font-size: 17px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+  #back-button {
+    padding: 7px 14px;
+    font-size: 13px;
+    top: 15px;
+    right: 15px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+<div id="info-card" class="hidden">
+  <h2>Region Information</h2>
+  <p><strong>Location:</strong> <span id="location"></span></p>
+  <p><strong>Temperature:</strong> <span id="temperature"></span> °C</p>
+  <p><strong>Rainfall:</strong> <span id="rainfall"></span> mm</p>
+  <p><strong>Water Scarcity Level:</strong> <span id="water-scarcity"></span></p>
+  <p><strong>Efficiency Level:</strong> <span id="efficiency-level"></span></p>
+</div>
+
+<button id="back-button"><a href="index.html">Back</a></button>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data.js"></script>
+
+</body>
+</html>
+

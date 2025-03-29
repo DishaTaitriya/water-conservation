@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="background-blur"></div>
+    <div class="container" id="container">
+      <div class="sign-up">
+        <form>
+          <h1>Create Account</h1>
+          <span>or use email for registeration</span>
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Sign Up</button>
+        </form>
+      </div>
+      <div class="sign-in">
+        <form>
+          <h1>Sign In</h1>
+          <span>or use email password</span>
+          <input type="text" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#" id="forgot-password">Forgot password</a>
+          <button>Sign In</button>
+        </form>
+      </div>
+      <div class="toogle-container">
+        <div class="toogle">
+          <div class="toogle-panel toogle-left">
+            <h1>Welcome User!</h1>
+            <p>If you already have an account</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toogle-panel toogle-right">
+            <h1>Hello, User!</h1>
+            <p>If you don't have an account</p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const container = document.getElementById("container");
+const registerbtn = document.getElementById("register");
+const loginbtn = document.getElementById("login");
+
+registerbtn.addEventListener("click", () => {
+  container.classList.add("active");
+});
+
+loginbtn.addEventListener("click", () => {
+  container.classList.remove("active");
+});
+
+document.querySelector('.sign-up form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.querySelector('.sign-up input[placeholder="Name"]').value;
+    const email = document.querySelector('.sign-up input[placeholder="Email"]').value;
+    const password = document.querySelector('.sign-up input[placeholder="Password"]').value;
+
+    if (name && email && password) {
+
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPassword', password);
+        localStorage.setItem('isLoggedIn', 'true'); 
+        alert('Account created successfully!');
+
+        window.location.href = 'index.html'; 
+    } else {
+        alert('Please fill all fields');
+    }
+});
+
+
+document.querySelector('.sign-in form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.querySelector('.sign-in input[placeholder="Email"]').value;
+    const password = document.querySelector('.sign-in input[placeholder="Password"]').value;
+
+    const storedEmail = localStorage.getItem('userEmail');
+    const storedPassword = localStorage.getItem('userPassword');
+
+    if (email === storedEmail && password === storedPassword) {
+        localStorage.setItem('isLoggedIn', 'true'); 
+        alert('Login successful!');
+        window.location.href = 'index.html'; 
+    } else {
+        alert('Invalid email or password');
+    }
+});
+
+
+const forgotPassword = document.getElementById('forgot-password');
+
+    forgotPassword.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const email = prompt('Enter your registered email:');
+        const storedEmail = localStorage.getItem('userEmail');
+
+        if (email === storedEmail) {
+            const newPassword = prompt('Enter new password:');
+            const confirmPassword = prompt('Confirm new password:');
+
+            if (newPassword && newPassword === confirmPassword) {
+                localStorage.setItem('userPassword', newPassword);
+                alert('Password reset successfully! You can now log in.');
+            } else {
+                alert('Passwords do not match or are empty.');
+            }
+        } else {
+            alert('Email not found!');
+        }
+    });
+    </script>
+  </body>
+</html>
