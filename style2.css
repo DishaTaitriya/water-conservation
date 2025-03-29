@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding-top: 60px;
+    padding: 0;
+}
+header {
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.back-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+.logo{
+    margin-right: 45%;
+    margin-top: 0%;
+    width: 5%;
+    height: 5%;
+    border-radius: 40px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px ;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card-image {
+    height: 150px;
+    overflow: hidden; 
+    margin-bottom: 10px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    color: #007BFF;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.learn-more-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.learn-more-btn:hover {
+    background-color: #0056b3;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.hidden {
+    display: none;
+}
+
+.footer {
+    background: linear-gradient(135deg, #1e5799, #2989d8, #7db9e8);
+    color: #fff;
+    padding: 50px 20px;
+    font-size: 16px;
+  }
+  
+  .footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-col h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .footer-col h4::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #ff7e5f;
+    margin-top: 5px;
+  }
+  
+  .footer-col p, 
+  .footer-col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-col ul li a:hover {
+    color: #ff7e5f;
+  }
+  
+  .footer-col ul li i {
+    margin-right: 10px;
+    color: #ff7e5f;
+  }
+  
+  
+  .social-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+  
+  .social-links a i {
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .social-links a:hover {
+    background: #ff7e5f;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    color: #ddd;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Responsive Fixes */
+  @media (max-width: 768px) {
+    .footer .container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer-col {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .social-links {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      padding: 30px 10px;
+    }
+  
+    .footer-col h4 {
+      font-size: 18px;
+    }
+  
+    .social-links a {
+      height: 35px;
+      width: 35px;
+    }
+  
+    .footer-bottom {
+      font-size: 12px;
+    }
+  }
+  
+
+@media (max-width: 1200px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+
