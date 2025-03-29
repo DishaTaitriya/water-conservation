@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather App</title>
+        <link rel="stylesheet" href="weather.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+        <script src="weather.js" defer></script>
+    </head>
+    <body>
+        <button id="back-button"><a href="index.html">← Back</a></button>
+
+        <div class="container">
+            <h1>Weather App</h1>
+            <div class="search-box">
+                <input id="Cityinput" type="text" placeholder="Enter city..." />
+                <button id="search-btn">Search</button>
+            </div>
+
+            <div id="weather-info" style="display: none;">
+                <div class="weather-card">
+                    <h2 id="city-name"></h2>
+                    <img id="weather-icon" alt="Weather Icon" />
+                    <p id="temperature"></p>
+                    <p id="descriptions"></p>
+                
+                    <div class="card">
+                        <h3>Rainfall</h3>
+                        <p id="rainfall">--</p>
+                    </div>
+                
+                    <div class="card">
+                        <h3>Humidity</h3>
+                        <p id="humidity">--</p>
+                    </div>
+                
+                    <div class="card">
+                        <h3>Drought Risk</h3>
+                        <p id="drought-risk">--</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div id="error-message"></div>
+            
+            
+        </div>
+    </body>
+</html>

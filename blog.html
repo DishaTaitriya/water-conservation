@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Forum & Expert Advice</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" 
+  integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f9fafc;
+            font-family: Arial, sans-serif;
+        }
+        .btn a{
+          text-decoration: none;
+          color:#ffffff;
+        }
+        .btn{
+          background-color: #1e5799;
+          border-color: #1e5799;
+          color: #fff;
+        }
+        .btn a:hover{
+          color: #ffffff;
+        }
+
+        .blog-card {
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 40%;
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .blog-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blog-content h3 {
+            color: #1e5799;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .blog-content a {
+            color: #1e5799;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-content a:hover {
+            color: #ff7e5f;
+        }
+
+        .forum-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .post-form input,
+        .post-form textarea {
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .post-form button {
+            background-color: #1e5799;
+            color: #ffffff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .post-form button:hover {
+            background-color: #164e87;
+        }
+
+        .post {
+            background-color: #f4f9fd;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        .post-info .user-name {
+            font-weight: bold;
+            color: #1e5799;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-card {
+                flex-direction: column;
+                margin-bottom: 16px;
+            }
+
+            .blog-card img {
+                width: 100%;
+                height: 180px;
+            }
+        }
+
+        .footer {
+  background: linear-gradient(135deg, #1e5799, #2989d8, #7db9e8);
+  color: #fff;
+  padding: 50px 20px;
+  font-size: 16px;
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer-col h4::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #ff7e5f;
+  margin-top: 5px;
+}
+
+.footer-col p, 
+.footer-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ff7e5f;
+}
+
+.footer-col ul li i {
+  margin-right: 10px;
+  color: #ff7e5f;
+}
+
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.social-links a i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.social-links a:hover {
+  background: #ff7e5f;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  color: #ddd;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-col {
+    width: 100%;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+  }
+
+  .social-links a {
+    height: 35px;
+    width: 35px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+
+.btn-like, .btn-comment {
+    background-color: #1e5799;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.btn-like:hover{
+  background-color:rgb(0, 123, 255);
+}
+.btn-comment:hover {
+    background-color: #6c757d;;
+}
+
+.comment-box {
+    margin-top: 10px;
+}
+
+.comments {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.comment {
+    background-color: #f4f9fd;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+<div class="d-flex justify-content-end mb-1">
+  <button class="btn btn-outline-primary "><a href="index.html">Back</a></button>
+</div>
+
+    <section>
+        <h2 class="mb-4 text-primary">Expert Advice</h2>
+        <div class="row gy-4">
+            <div class="col-md-6">
+                <div class="blog-card">
+                    <img src="img/blog1.jpg" alt="Water-Saving Techniques" />
+                    <div class="blog-content">
+                        <h3>Water-Efficient Crop Selection</h3>
+                        <p>Learn how to conserve water efficiently at home and in agriculture...</p>
+                        <a href="https://www.fao.org/land-water/databases-and-software/crop-information/en/" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="blog-card">
+                    <img src="img/smartIrr.jpg" alt="Smart Irrigation" />
+                    <div class="blog-content">
+                        <h3>Smart Irrigation Methods</h3>
+                        <p>Discover the latest technology to optimize water usage in farming...</p>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378377421006016" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="forum-container mt-5">
+        <div class="forum-header mb-4">
+            <h2 class="text-primary">Community Forum</h2>
+            <p>Engage with other users, ask questions, and share knowledge!</p>
+        </div>
+
+      <div class="mb-3">
+        <input type="text" id="userName" class="form-control" placeholder="Your Name" />
+    </div>
+    <div class="mb-3">
+        <textarea id="postContent" class="form-control" rows="4" placeholder="Write your post..."></textarea>
+    </div>
+    <button onclick="addPost()" class="btn btn-primary">Post</button>
+    <div id="alertMessage" class="alert alert-danger mt-3" style="display: none;"></div>
+  </div>
+      
+      <div id="forumPosts" class="mt-4">
+    
+        <div class="card mb-3" id="post-john">
+            <div class="card-body">
+                <strong class="user-name">John Doe</strong>
+                <p>This is John Doe's post. Welcome to the community!</p>
+                <div class="post-actions mb-2">
+                    <button class="btn btn-outline-primary btn-sm" onclick="likePost('john')">
+                        👍 Like <span id="like-count-john">0</span>
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm" onclick="toggleCommentBox('john')">
+                        💬 Comment
+                    </button>
+                </div>
+                <div id="comment-box-john" class="comment-box mt-2" style="display: none;">
+                    <input type="text" id="comment-input-john" class="form-control mb-2" placeholder="Write a comment...">
+                    <button onclick="addComment('john')" class="btn btn-primary btn-sm">Add Comment</button>
+                </div>
+                <div id="comments-john" class="comments mt-2"></div>
+            </div>    
+        </div>
+
+        <div class="card mb-3" id="post-emily">
+          <div class="card-body">
+              <strong class="user-name">Emily Smith</strong>
+              <p>Happy to be part of this community!</p>
+              <div class="post-actions mb-2">
+                  <button class="btn btn-outline-primary btn-sm" onclick="likePost('emily')">
+                      👍 Like <span id="like-count-emily">0</span>
+                  </button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="toggleCommentBox('emily')">
+                      💬 Comment
+                  </button>
+              </div>
+              <div id="comment-box-emily" class="comment-box mt-2" style="display: none;">
+                  <input type="text" id="comment-input-emily" class="form-control mb-2" placeholder="Write a comment...">
+                  <button onclick="addComment('emily')" class="btn btn-primary btn-sm">Add Comment</button>
+              </div>
+              <div id="comments-emily" class="comments mt-2"></div>
+          </div>
+    </div>
+
+      </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="footer-col">
+        <h4>About Us</h4>
+        <p>We are committed to promoting water conservation through innovative solutions and educational resources.</p>
+      </div>
+
+  
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="weather.html">WeatherApp</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="GIS.html">GISmap</a></li>
+          <li><a href="index.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+ 
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="bi bi-geo-alt"></i> 123 Water Street, India</li>
+          <li><i class="bi bi-envelope"></i> support@dtwater.com</li>
+          <li><i class="bi bi-telephone"></i> +91 123-456-7890</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 dt. All rights reserved. | Designed with ❤️ by dt </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+ integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<script>
+  let postIdCounter = 1;
+
+  function showAlert(message) {
+        const alertMessage = document.getElementById('alertMessage');
+        alertMessage.innerText = message;
+        alertMessage.style.display = 'block';
+
+        setTimeout(() => {
+            alertMessage.style.display = 'none';
+        }, 3000);
+    }
+
+
+  function addPost() {
+      const userName = document.getElementById('userName').value.trim();
+      const postText = document.getElementById('postContent').value.trim();
+
+      if (!userName || !postText) {
+        showAlert('Please enter your name and post content!');
+            return;
+        }
+          const forumPosts = document.getElementById('forumPosts');
+          const postId = `post-${postIdCounter++}`;
+
+          const newPost = `
+              <div class="card mb-3" id="${postId}">
+                  <div class="card-body">
+                      <strong class="user-name">${userName}</strong>
+                      <p>${postText}</p>
+                      <div class="post-actions mb-2">
+                          <button class="btn btn-outline-primary btn-sm" onclick="likePost('${postId}')">
+                              👍 Like <span id="like-count-${postId}">0</span>
+                          </button>
+                          <button class="btn btn-outline-secondary btn-sm" onclick="toggleCommentBox('${postId}')">
+                              💬 Comment
+                          </button>
+                      </div>
+                      <div id="comment-box-${postId}" class="comment-box mt-2" style="display: none;">
+                          <input type="text" id="comment-input-${postId}" class="form-control mb-2" placeholder="Write a comment...">
+                          <button onclick="addComment('${postId}')" class="btn btn-primary btn-sm">Add Comment</button>
+                      </div>
+                      <div id="comments-${postId}" class="comments mt-2"></div>
+                  </div>
+              </div>
+          `;
+
+          forumPosts.insertAdjacentHTML('afterbegin', newPost);
+
+          document.getElementById('userName').value = '';
+          document.getElementById('postContent').value = '';
+
+  }
+
+
+  function likePost(postId) {
+      const likeCountElement = document.getElementById(`like-count-${postId}`);
+      let count = parseInt(likeCountElement.innerText);
+      count++;
+      likeCountElement.innerText = count;
+  }
+
+
+  function toggleCommentBox(postId) {
+      const commentBox = document.getElementById(`comment-box-${postId}`);
+      commentBox.style.display = commentBox.style.display === 'none' ? 'block' : 'none';
+  }
+
+
+  function addComment(postId) {
+      const inputElement = document.getElementById(`comment-input-${postId}`);
+      const commentText = inputElement.value.trim();
+
+      if (commentText) {
+          const commentContainer = document.getElementById(`comments-${postId}`);
+          const commentElement = document.createElement('div');
+          commentElement.classList.add('alert', 'alert-light', 'mb-2');
+          commentElement.innerText = commentText;
+
+
+          commentContainer.appendChild(commentElement);
+
+
+          inputElement.value = '';
+
+ 
+          document.getElementById(`comment-box-${postId}`).style.display = 'none';
+      }
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+  

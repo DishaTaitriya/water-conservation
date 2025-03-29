@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1561553873-e8491a564fd0?q=80&w=1894&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+}
+#back-button a{
+    text-decoration: none;
+    color: white;
+}
+#back-button:hover {
+    background-color: #ff3366;
+}
+#error-message{
+    display: none;
+}
+
+.container {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding-bottom: 15px;
+}
+.container h1 {
+    font-size: 2.5rem;
+    /* margin-bottom: 20px; */
+    margin: 10px;
+    /* padding-top: 20px; */
+    padding: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    font-weight: 600;
+    background: #ff4081;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #ff3366;
+}
+
+#weather-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; 
+    display: block;
+    margin: 0 auto; 
+}
+
+#temperature {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 3px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ff4081;
+}
+
+.card p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+#error-message {
+    color: #ff3366;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
