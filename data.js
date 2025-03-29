@@ -14,7 +14,7 @@ const scarcityEl = document.getElementById('water-scarcity');
 const efficiencyEl = document.getElementById('efficiency-level');
 
 
-const API_KEY = import.meta.env.VITE_API_KEY_2;
+const API_KEY = 'f2661f596bd9f93fde76818df0550f10';
 // Function to calculate water scarcity and efficiency level based on weather data
 function calculateWaterStats(temp, rainfall) {
   let scarcity = '';
