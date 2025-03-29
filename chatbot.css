@@ -155,11 +155,9 @@
 
 @media (max-width: 490px) {
   .chatbot{
-    right: 0;
-    bottom: 0;
     width: 90%;
     height: 60%;
-    border-radius: 0;
+    border-radius: 50px;
   }
   .chatbot .chatbox{
     height:  80%;
