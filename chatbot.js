@@ -5,7 +5,7 @@ const chatbotToggler = document.querySelector(".chatbot-toggler");
 const chatbotCloseBtn = document.querySelector(".close-btn");
 
 let userMessage;
-const API_KEY = import.meta.env.VITE_API_KEY_3;
+const API_KEY = 'AIzaSyCMBOMH187n4T0PSX_sB8sihGEV5Qwa808';
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -84,26 +84,5 @@ sendChatBtn.addEventListener("click", handleChat);
 chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
-//new
-// // Check if chatbot is embedded (via query parameter)
-// const urlParams = new URLSearchParams(window.location.search);
-// const isEmbedded = urlParams.get('embed');
 
-// if (isEmbedded) {
-//     document.querySelector('.chatbot-toggler').style.display = 'none';
-// }
-
-// // Listen for toggle signal from parent window
-// window.addEventListener('message', (event) => {
-//     if (event.data === 'toggle-chatbot') {
-//         document.body.classList.toggle('show-chatbot');
-//         document.querySelector('.chatbot').style.display = 'block'; // Ensure chatbot is visible
-//     }
-// });
-
-// // Close chatbot when close button is clicked
-// chatbotCloseBtn.addEventListener("click", () => {
-//     document.body.classList.remove("show-chatbot");
-//     document.querySelector('.chatbot').style.display = 'none'; // Hide chatbot on close
-// });
 
